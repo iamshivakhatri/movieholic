@@ -6,8 +6,7 @@ const renderBackground = () => {
 
     img.onload = () => {
         backgroundSection.style.backgroundImage = `url("${img.src}")`;
-        backgroundSection.style.width = '100%'; // Set the width to 100% of its container
-        backgroundSection.style.height = '600px'; // Set a fixed height (adjust as needed)
+        backgroundSection.style.backgroundPosition = 'center'; // Center the image
         backgroundSection.style.backgroundSize = 'cover'; // Set the background size to cover
         backgroundSection.style.backgroundRepeat = 'no-repeat'; // Prevent background image from repeating
     };

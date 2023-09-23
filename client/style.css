@@ -1,21 +1,28 @@
-/* Root Styles CSS */
+/***   Root Styles CSS    
 :root {
   background-color: white;
   font-family: Avenir, Helvetica, sans-serif;
   color: black;
 }
+!
 
+/* Header CSS */
+
+*{
+  margin: 0;
+}
 /* Header CSS */
 .header-container {
   overflow: hidden;
   padding: 20px 10px;
-  padding-bottom: 60px;
 }
 
 .header-left {
   float: left;
   height: 100px;
   width: 310px;
+  display: flex;
+  align-items: center;
 }
 
 .header-left img {
@@ -52,59 +59,94 @@ touch-action: manipulation;
 width: 80px;
 }
 
+
+#background-section{
+  background-color: #8fb3ff;
+  height: 60vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  
+}
+.image-background{
+display: flex;
+justify-content: center;
+
+}
+
+
 /* Home page CSS */
+
+.main-container{
+  background-color: #8fb3ff;
+  padding: 50px;
+}
+
+
 
 main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .card {
+  
   width: 300px;
   height: 400px;
-  background: transparent;
-  border-style: solid;
-  border-width: 3px;
-  border-color: rgb(3, 7, 89);
-  border-radius: 0.3rem;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.057);
-  margin-top: 0px;
+  border: none;
+  margin-top: 20px; /* Adjust spacing */
   margin-left: 20px;
-  margin-right: 40px;
-  margin-bottom: 60px;
+  margin-right: 20px; /* Reduce right margin */
+  margin-bottom: 20px; /* Reduce bottom margin */
+  transition: transform 0.2s ease; /* Add a subtle transform transition */
 }
 
-.card img {
-  height: 100%;
+.card:hover {
+  transform: scale(1.05); /* Scale up the card slightly on hover */
 }
 
-.top-container {
-  background-repeat: no-repeat;
+
+
+
+.card .top-container {
   background-size: cover;
-  background-position: center center;
-  height: 250px;
+  height: 400px;
+  transition: opacity 0.3s ease; /* Add a smooth opacity transition effect */
 }
 
-.bottom-container {
-  margin-top:30px;
-  margin-left: 10px;
+
+
+
+.card:hover .top-container {
+  opacity: 0.4; /* Faded effect when hovering over the card */
 }
 
-.bottom-container h3 {
-  margin-top: 10px;
-  margin-bottom: 6px;
+.card .bottom-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 5px;
+  color: black;
+}
+.card .bottom-container a {
+  color: red;
 }
 
-.bottom-container p {
-  margin: 2px;
+.card:hover .bottom-container {
+  opacity: 1;
 }
 
-.bottom-container a {
-  color: rgb(228, 16, 133);
-  text-decoration: none;
-}
+/* ... other styles ... */
+
 
 /* 404 Page CSS */
 
@@ -153,3 +195,63 @@ main {
 .gift-details {
   width: 45vw;
 }
+
+/** this is the movie page now*/
+
+/* Movie Detail Page CSS */
+
+/* Container for the whole page */
+#movie-content {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  
+}
+
+/* Container for the image (on the left) */
+.image-container {
+  width: 400px; /* Adjust the width as needed */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Image styles */
+#image {
+  max-width: 100%; /* Ensures the image fits within the container */
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Removes extra space below the image */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Container for movie details (on the right) */
+.movie-details {
+  width: 50%; /* Adjust the width as needed */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Movie detail text styles */
+#title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#genre {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#releaseyear {
+  font-size: 16px;
+}
+
+/* Center the text vertically and horizontally */
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
